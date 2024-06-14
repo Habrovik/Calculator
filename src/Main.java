@@ -26,8 +26,8 @@ public class Main {
 // Этот метод преобразовывает римскую цифру в арабскую
 
     private static String arabToRim(int number) {
-        String[] symbols = {"C", "L", "X", "IX", "V", "IV", "I"};
-        int[] values = {100, 50, 10, 9, 5, 4, 1};
+        String[] symbols = {"C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"};
+        int[] values = {100, 90, 50, 40, 10, 9, 5, 4, 1};
         StringBuilder result = new StringBuilder();
         for (int i = 0; number > 0; i++) {
             while (number >= values[i]) {
