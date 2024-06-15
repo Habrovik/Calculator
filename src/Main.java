@@ -108,11 +108,7 @@ public class Main {
         } else if (operator == '*') {
             result = num1 * num2;
         } else if (operator == '/') {
-            if (num2 != 0) {
                 result = num1 / num2;
-            } else {
-                throw new ArithmeticException("Ошибка: нельзя делить на ноль!");
-            }
         } else {
             throw new IllegalArgumentException ("Ошибка: неверная операция!");
         }
