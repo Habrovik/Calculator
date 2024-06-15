@@ -95,7 +95,6 @@ public class Main {
         int allAtOnce = solution(num1, num2, operator);
         String resultStr = (isRim || isRim2) ? arabToRim(allAtOnce) : String.valueOf(allAtOnce);
         return ("Результат: " + resultStr);
-
     }
 //Это основной метод, в который подают значение, он его обрабатывает и возвращает ответ    
     
