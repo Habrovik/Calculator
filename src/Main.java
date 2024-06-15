@@ -63,10 +63,12 @@ public class Main {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-
         System.out.println("Введите выражение (через пробел): ");
         String input = scanner.nextLine().trim();
+        System.out.println (calc(input));
+    }
 
+    public static String calc(String input) {
         String[] array = input.split(" ");
         if (array.length != 3) {
             throw new IllegalArgumentException("Ошибка: вы неправильно ввели значения");
@@ -89,9 +91,16 @@ public class Main {
         if ((!isRim && isRim2) || (isRim && !isRim2)) {
             throw new IllegalArgumentException("Ошибка: оба числа должны быть либо арабскими, либо римскими!");
         }
+        
+        int allAtOnce = solution(num1, num2, operator);
+        String resultStr = (isRim || isRim2) ? arabToRim(allAtOnce) : String.valueOf(allAtOnce);
+        return ("Результат: " + resultStr);
 
-        int result;
-
+    }
+//Это основной метод, в который подают значение, он его обрабатывает и возвращает ответ    
+    
+    public static int solution(int num1, int num2, char operator) {
+        int result = 0;
         if (operator == '+') {
             result = num1 + num2;
         } else if (operator == '-') {
@@ -107,7 +116,7 @@ public class Main {
         } else {
             throw new IllegalArgumentException ("Ошибка: неверная операция!");
         }
-        String resultStr = (isRim || isRim2) ? arabToRim(result) : String.valueOf(result);
-        System.out.println("Результат: " + resultStr);
+        return result;
     }
+//Этот метод делает вычисление    
 }
