@@ -98,7 +98,7 @@ public class Main {
         String resultStr = (isRim || isRim2) ? arabToRim(allAtOnce) : String.valueOf(allAtOnce);
 
         if (resultStr.isEmpty()) {
-            throw new ArithmeticException("Ошибка: Результат вычисления римских чисел не может быть меньше нуля.");
+            throw new ArithmeticException("Ошибка: Результат вычисления римских чисел не может быть меньше или равным нулю.");
         }
 
         return ("Результат: " + resultStr);
