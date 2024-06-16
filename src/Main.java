@@ -101,6 +101,12 @@ public class Main {
             throw new ArithmeticException("Ошибка: Результат вычисления римских чисел не может быть меньше или равным нулю.");
         }
 
+        String[] newArray = {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "/", "*", "-", "+", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X"};
+        for (int i = 0; i < newArray.length; i++) {
+            if (!input1.contains(newArray[i]) || !input2.contains(newArray[i])) {
+                throw new ArithmeticException("Ошибка: некорректный эллемент.");
+            }
+        }
         return ("Результат: " + resultStr);
     }
 //Это основной метод, в который подают значение, он его обрабатывает и возвращает ответ
