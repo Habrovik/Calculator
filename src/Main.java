@@ -1,3 +1,5 @@
+package Calculator;
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
@@ -91,13 +93,18 @@ public class Main {
         if ((!isRim && isRim2) || (isRim && !isRim2)) {
             throw new IllegalArgumentException("Ошибка: оба числа должны быть либо арабскими, либо римскими!");
         }
-        
+
         int allAtOnce = solution(num1, num2, operator);
         String resultStr = (isRim || isRim2) ? arabToRim(allAtOnce) : String.valueOf(allAtOnce);
+
+        if (resultStr.isEmpty()) {
+            throw new ArithmeticException("Ошибка: Результат вычисления римских чисел не может быть меньше нуля.");
+        }
+
         return ("Результат: " + resultStr);
     }
-//Это основной метод, в который подают значение, он его обрабатывает и возвращает ответ    
-    
+//Это основной метод, в который подают значение, он его обрабатывает и возвращает ответ
+
     public static int solution(int num1, int num2, char operator) {
         int result = 0;
         if (operator == '+') {
@@ -107,11 +114,11 @@ public class Main {
         } else if (operator == '*') {
             result = num1 * num2;
         } else if (operator == '/') {
-                result = num1 / num2;
+            result = num1 / num2;
         } else {
             throw new IllegalArgumentException ("Ошибка: неверная операция!");
         }
         return result;
     }
-//Этот метод делает вычисление    
+//Этот метод делает вычисление
 }
