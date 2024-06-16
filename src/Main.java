@@ -73,7 +73,7 @@ public class Main {
     public static String calc(String input) {
         String[] array = input.split(" ");
         if (array.length != 3) {
-            throw new IllegalArgumentException("Ошибка: вы неправильно ввели значения");
+            throw new IllegalArgumentException("Ошибка: неправильно введены значения.");
         }
 
         String input1 = array[0];
@@ -84,14 +84,14 @@ public class Main {
         boolean isRim2 = isItWeNeedRim(input2);
 
         if ((!isRim && !isItWeNeedArab(input1)) || (!isRim2 && !isItWeNeedArab(input2))) {
-            throw new ArithmeticException("Ошибка: нужно ввести числа от 1 до 10");
+            throw new ArithmeticException("Ошибка: нужно ввести числа от 1 до 10.");
         }
 
         int num1 = isRim ? rimToArab(input1) : Integer.parseInt(input1);
         int num2 = isRim2 ? rimToArab(input2) : Integer.parseInt(input2);
 
         if ((!isRim && isRim2) || (isRim && !isRim2)) {
-            throw new IllegalArgumentException("Ошибка: оба числа должны быть либо арабскими, либо римскими!");
+            throw new IllegalArgumentException("Ошибка: оба числа должны быть либо арабскими, либо римскими.");
         }
 
         int allAtOnce = solution(num1, num2, operator);
@@ -116,7 +116,7 @@ public class Main {
         } else if (operator == '/') {
             result = num1 / num2;
         } else {
-            throw new IllegalArgumentException ("Ошибка: неверная операция!");
+            throw new IllegalArgumentException ("Ошибка: неверная операция.");
         }
         return result;
     }
