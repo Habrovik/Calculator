@@ -100,10 +100,17 @@ public class Main {
         if (resultStr.isEmpty()) {
             throw new ArithmeticException("Ошибка: Результат вычисления римских чисел не может быть меньше или равным нулю.");
         }
-
-        String[] newArray = {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "/", "*", "-", "+", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X"};
+        boolean input1Correct = false, input2Correct = false;
+        String[] newArray = {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X"};
         for (int i = 0; i < newArray.length; i++) {
-            if (!input1.contains(newArray[i]) || !input2.contains(newArray[i])) {
+            if ((input1.equals(newArray[i]))) {
+
+                input1Correct = true;
+            }
+            if ((input2.equals(newArray[i]))) {
+                input2Correct = true;
+            }
+            if (i == newArray.length - 1 && (!input1Correct || !input2Correct)) {
                 throw new ArithmeticException("Ошибка: некорректный эллемент.");
             }
         }
